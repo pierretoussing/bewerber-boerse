@@ -8,10 +8,10 @@ function ArbeitszeitFormControl(props) {
   const { value, onChange } = props;
 
   return (
-    <FormControl>
+    <FormControl style={{ width: '100%' }}>
         <InputLabel>Arbeitszeit</InputLabel>
         <Select name="arbeitszeit" value={value} onChange={onChange}>
-            <MenuItem value="">None</MenuItem>
+            <MenuItem value="">Alle</MenuItem>
             <MenuItem value="vz">Vollzeit</MenuItem>
             <MenuItem value="tz">Teilzeit</MenuItem>
             <MenuItem value="snw">Schicht,Nacht,Wochenende</MenuItem>

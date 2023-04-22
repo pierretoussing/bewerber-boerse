@@ -8,10 +8,10 @@ function UmkreisFormControl(props) {
   const { value, onChange } = props;
 
   return (
-    <FormControl>
+    <FormControl style={{ width: '100%' }}>
           <InputLabel>Umkreis</InputLabel>
           <Select name="umkreis" value={value} onChange={onChange}>
-            <MenuItem value="">None</MenuItem>
+            <MenuItem value="">Alle</MenuItem>
             <MenuItem value="0">ganzer Ort</MenuItem>
             <MenuItem value="10">10km</MenuItem>
             <MenuItem value="15">15km</MenuItem>

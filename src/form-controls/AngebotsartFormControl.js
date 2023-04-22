@@ -8,10 +8,10 @@ function AngebotsartFormControl(props) {
   const { value, onChange } = props;
 
   return (
-    <FormControl>
+    <FormControl style={{ width: '100%' }}>
     <InputLabel>Angebotsart</InputLabel>
     <Select name="angebotsart" value={value} onChange={onChange}>
-      <MenuItem value="">None</MenuItem>
+      <MenuItem value="">Alle</MenuItem>
       <MenuItem value="ar">Arbeitskräfte</MenuItem>
       <MenuItem value="au">Auszubildende/Duales Studium</MenuItem>
       <MenuItem value="pt">Praktikanten/Trainees</MenuItem>
