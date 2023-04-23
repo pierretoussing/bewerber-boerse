@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { fetchBewerber } from '../data/api';
 import { CircularProgress, Button, Grid } from '@mui/material';
 import BewerberForm from '../form-controls/BewerberForm';
+import BewerberTable from './BewerberTable';
 
 
 function BewerberComponent() {
@@ -22,7 +23,6 @@ function BewerberComponent() {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleClick = () => {
-    setBewerber(null)
     setIsLoading(true)
     fetchBewerber(params)
       .then(bewerber => {
@@ -46,18 +46,14 @@ function BewerberComponent() {
         <Button variant="contained" color="primary" onClick={handleClick}>Search</Button>
       </Grid>
   {isLoading ? (
-    <div>
-       <CircularProgress/>
-    </div>
+    <Grid item xs={12}>
+      <CircularProgress/>
+    </Grid>
   ) :
   (
     bewerber ? 
     (
-      <ul>
-        {bewerber.map(item => (
-          <li key={item.refnr}>{item.refnr}</li>
-        ))}
-      </ul>
+      <BewerberTable bewerber={bewerber}/>
     )
     :
     <p></p>
