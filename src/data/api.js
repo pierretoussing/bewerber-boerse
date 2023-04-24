@@ -1,4 +1,4 @@
-export async function fetchBewerber(params = {}) {
+export async function fetchData(params = {}) {
     const baseUrl = 'https://rest.arbeitsagentur.de/jobboerse/bewerbersuche-service/pc/v1/bewerber';
   
     const url = new URL(baseUrl);
@@ -21,7 +21,6 @@ export async function fetchBewerber(params = {}) {
       }
       return response.json();
     })
-    .then(data => data.bewerber)
     .catch(error => {
       console.error(error);
     });

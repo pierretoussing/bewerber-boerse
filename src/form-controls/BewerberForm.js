@@ -19,7 +19,7 @@ function BewerberForm(props) {
   const { params, onChange } = props;
 
   return (
-    <Grid container spacing={2} justifyContent="center" style={{ maxWidth: '600px' }}>
+    <Grid container spacing={2} justifyContent='center' style={{ maxWidth: '600px' }}>
       <Grid container item xs={12} spacing={2}>
         <Grid item xs={6}>
           <WasFormControl value={params.was} onChange={onChange} fullWidth />
@@ -33,7 +33,7 @@ function BewerberForm(props) {
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                 >
-                  {"Mehr Filter"}
+                  {'Mehr Filter'}
                 </AccordionSummary>
                 <AccordionDetails>
                   <Grid container spacing={2}>

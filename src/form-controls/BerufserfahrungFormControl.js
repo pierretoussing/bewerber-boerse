@@ -10,10 +10,10 @@ function BerufserfahrungFormControl(props) {
   return (
     <FormControl style={{ width: '100%' }}>
       <InputLabel>Berufserfahrung</InputLabel>
-      <Select name="berufserfahrung" value={value} onChange={onChange}>
-        <MenuItem value="">Alle</MenuItem>
-        <MenuItem value="be">Berufseinsteiger*innen</MenuItem>
-        <MenuItem value="mb">Mit Berufserfahrung</MenuItem>
+      <Select name='berufserfahrung' value={value} onChange={onChange}>
+        <MenuItem value=''>Alle</MenuItem>
+        <MenuItem value='be'>Berufseinsteiger*innen</MenuItem>
+        <MenuItem value='mb'>Mit Berufserfahrung</MenuItem>
       </Select>
     </FormControl>
   );

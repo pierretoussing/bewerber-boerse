@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { fetchBewerber } from '../data/api';
+import { fetchData } from '../data/api';
 import { CircularProgress, Button, Grid } from '@mui/material';
 import BewerberForm from '../form-controls/BewerberForm';
 import BewerberTable from './BewerberTable';
@@ -7,27 +7,27 @@ import BewerberTable from './BewerberTable';
 
 function BewerberComponent() {
   const [bewerber, setBewerber] = useState(null);
+  const [numResults, setNumResults] = useState(0)
   const [params, setParams] = useState({
-    was: '',
-    ausbildungsart: '',
-    wo: '',
-    umkreis: '',
     angebotsart: '',
     arbeitszeit: '',
-    berufserfahrung: '',
-    vertragsart: '',
+    ausbildungsart:'',
     behinderung: '',
-    page: '',
-    size: ''
+    berufserfahrung: '',
+    umkreis: '',
+    vertragsart: '',
+    was: '',
+    wo: ''
   });
   const [isLoading, setIsLoading] = useState(false);
 
   const handleClick = () => {
     setIsLoading(true)
-    fetchBewerber(params)
-      .then(bewerber => {
-        console.log(bewerber)
-        setBewerber(bewerber);
+    fetchData(params)
+      .then(data => {
+        console.log(data)
+        setBewerber(data.bewerber);
+        setNumResults(data.maxErgebnisse)
         setIsLoading(false)
       });
   };
@@ -43,24 +43,29 @@ function BewerberComponent() {
     <Grid container spacing={2} justifyContent="center">
       <BewerberForm params={params} onChange={handleChange}/>
       <Grid item xs={12}>
-        <Button variant="contained" color="primary" onClick={handleClick}>Search</Button>
+        <Button variant="contained" color="primary" onClick={handleClick}>Suchen</Button>
       </Grid>
-  {isLoading ? (
-    <Grid item xs={12}>
-      <CircularProgress/>
+      {isLoading ? (
+        <Grid item xs={12}>
+          <CircularProgress/>
+        </Grid>
+      ) :
+      (
+        bewerber ? 
+        (
+          <>
+            <Grid item xs={12}>
+              <p>{numResults} Ergebnisse gefunden</p>
+            </Grid>
+            <BewerberTable bewerber={bewerber}/>
+          </>
+        )
+        :
+        <></>
+      )
+      }
     </Grid>
-  ) :
-  (
-    bewerber ? 
-    (
-      <BewerberTable bewerber={bewerber}/>
-    )
-    :
-    <p></p>
-  )
-  }
-  </Grid>
-);
+  );
 }
 
 export default BewerberComponent;

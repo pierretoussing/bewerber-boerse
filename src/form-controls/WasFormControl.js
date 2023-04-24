@@ -5,7 +5,7 @@ function WasFormControl(props) {
   const { value, onChange } = props;
 
   return (
-    <TextField label="Was" name="was" value={value} onChange={onChange} style={{ width: '100%' }}/>
+    <TextField label='Was' name='was' value={value} onChange={onChange} style={{ width: '100%' }}/>
   );
 }
 

@@ -5,8 +5,6 @@ function BewerberDetailsModule(props) {
 
   const { data, open, handleClose } = props;
 
-  console.log(data)
-
   const translations = {
     refnr: "Referenznummer",
     verfuegbarkeitVon: "Verfügbarkeit von",
@@ -123,7 +121,7 @@ function BewerberDetailsModule(props) {
   return (
 
     <Dialog open={open} onClose={handleClose}>
-  <DialogTitle>{data.refnr}</DialogTitle>
+  <DialogTitle>Details</DialogTitle>
   <DialogContent>
     <div>
       {Object.entries(data).map(([key, value]) => (
