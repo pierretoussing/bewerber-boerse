@@ -5,7 +5,13 @@ function WoFormControl(props) {
   const { value, onChange } = props;
 
   return (
-    <TextField label='Wo' name='wo' value={value} onChange={onChange} style={{ width: '100%' }}/>
+    <TextField
+      label="Wo"
+      name="wo"
+      value={value}
+      onChange={onChange}
+      style={{ width: '100%' }}
+    />
   );
 }
 

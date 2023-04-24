@@ -4,8 +4,15 @@ import Header from './header/Header';
 function App() {
   return (
     <div>
-      <Header/>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', minHeight: '100vh' }}>
+      <Header />
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'flex-start',
+          minHeight: '100vh',
+        }}
+      >
         <div style={{ margin: '2rem', textAlign: 'center' }}>
           <BewerberComponent />
         </div>
@@ -13,6 +20,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;

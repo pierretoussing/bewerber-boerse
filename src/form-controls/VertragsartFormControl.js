@@ -10,10 +10,10 @@ function VertragsartFormControl(props) {
   return (
     <FormControl style={{ width: '100%' }}>
       <InputLabel>Vertragsart</InputLabel>
-      <Select name='vertragsart' value={value} onChange={onChange}>
-        <MenuItem value=''>Alle</MenuItem>
-        <MenuItem value='be'>Befristet</MenuItem>
-        <MenuItem value='ub'>Unbefristet</MenuItem>
+      <Select name="vertragsart" value={value} onChange={onChange}>
+        <MenuItem value="">Alle</MenuItem>
+        <MenuItem value="be">Befristet</MenuItem>
+        <MenuItem value="ub">Unbefristet</MenuItem>
       </Select>
     </FormControl>
   );
